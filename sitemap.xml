@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://sabrinabuenosimoveis.com.br/</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sabrinabuenosimoveis.com.br/src/assets/images/logos/logo-principal.png</image:loc>
+      <image:title>Sabrina Buenos Imóveis - Logo</image:title>
+      <image:caption>Imobiliária especializada em São Paulo e região metropolitana</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Casa Térrea Jardim Santa Teresa -->
+  <url>
+    <loc>https://sabrinabuenosimoveis.com.br/casa-terrea-jardim-santa-teresa.html</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sabrinabuenosimoveis.com.br/src/assets/images/Casa/Capa.jpeg</image:loc>
+      <image:title>Casa Térrea com Edícula - Jardim Santa Teresa</image:title>
+      <image:caption>Casa térrea com 3 dormitórios, pé direito alto e edícula em Jardim Santa Teresa, Mogi das Cruzes - São Paulo</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Sobrado Mogi das Cruzes -->
+  <url>
+    <loc>https://sabrinabuenosimoveis.com.br/sobrado-mogi-das-cruzes.html</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sabrinabuenosimoveis.com.br/src/assets/images/sobrado/WhatsApp Image 2025-09-15 at 19.00.15 (1).jpeg</image:loc>
+      <image:title>Sobrado Pronto para Morar - Mogi das Cruzes</image:title>
+      <image:caption>Sobrado pronto para morar em condomínio fechado, 63m², 2 dormitórios em Mogi das Cruzes - São Paulo</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Casa Quintal Amplo -->
+  <url>
+    <loc>https://sabrinabuenosimoveis.com.br/casa-quintal-amplo.html</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sabrinabuenosimoveis.com.br/src/assets/images/Quintal/Capa card.jpeg</image:loc>
+      <image:title>Casa com Quintal Amplo - Mogi das Cruzes</image:title>
+      <image:caption>Casa com quintal amplo, 2 dormitórios, 1 suíte, garagem para 2 carros em Mogi das Cruzes - São Paulo</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Condomínio Veneza -->
+  <url>
+    <loc>https://sabrinabuenosimoveis.com.br/condominio-veneza.html</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sabrinabuenosimoveis.com.br/src/assets/images/veneza/Capa.jpeg</image:loc>
+      <image:title>Condomínio Veneza - Mogi das Cruzes</image:title>
+      <image:caption>Sobrado no Condomínio Veneza com 2 dormitórios, 2 suítes, quintal privativo em Mogi das Cruzes - São Paulo</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>

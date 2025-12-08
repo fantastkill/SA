@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Casa com Quintal Amplo e Design Moderno | Sabrina Buenos Imóveis</title>
+    <meta name="description" content="Casa térrea moderna com quintal amplo. 2 dormitórios (1 suíte), sala com pé direito duplo, garagem para 2 carros. 83 m² construídos em terreno de 170 m²." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="src/assets/images/logos/logo-principal.png" />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <style>
+        .gallery-section { padding: 80px 0; background: var(--bg-800); }
+        .carousel { max-width: 1080px; margin: 0 auto; }
+        .carousel-main { position: relative; border-radius: 14px; overflow: hidden; background:#0a1f30; }
+        .carousel-main img { width: 100%; max-height: 560px; height: auto; object-fit: contain; background:#0a1f30; }
+        .carousel-nav { display: flex; gap: 10px; overflow-x: auto; padding: 12px 0; scrollbar-width: none; -ms-overflow-style: none; }
+        .carousel-nav::-webkit-scrollbar { display: none; }
+        .carousel-thumb { width: 120px; height: 86px; border-radius: 10px; overflow: hidden; cursor: pointer; opacity: .85; border: 2px solid rgba(10,31,48,.6); background:#0a1f30; flex-shrink: 0; transition: all 0.3s ease; }
+        .carousel-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-thumb.active { opacity: 1; border-color: var(--gold-500); box-shadow: 0 0 0 2px rgba(230,203,115,.25); transform: scale(1.05); }
+        .carousel-thumb:hover { opacity: 0.95; transform: scale(1.02); }
+        .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: transparent; color: var(--gold-500); border: none; width: auto; height: auto; border-radius: 0; cursor: pointer; display: grid; place-items: center; font-size: 42px; line-height: 1; padding: 4px 8px; }
+        .carousel-arrow.prev { left: 12px; }
+        .carousel-arrow.next { right: 12px; }
+        .scroll-hint { text-align:center; color: var(--gold-500); margin-top: 14px; opacity:.95; font-weight:700; font-size: 18px; letter-spacing:.2px; cursor: pointer; }
+        .scroll-hint .chev { display:inline-block; animation: bounceV 1.2s ease-in-out infinite; margin-left: 6px; }
+        @keyframes bounceV { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(6px);} }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .gallery-section { padding: 40px 0; }
+            .carousel-main { border-radius: 12px; margin: 0 16px; }
+            .carousel-main img { max-height: 300px; }
+            .carousel-nav { gap: 12px; padding: 16px 16px; margin: 0 -16px; }
+            .carousel-thumb { width: 100px; height: 75px; border-radius: 8px; }
+            .carousel-arrow { font-size: 32px; padding: 8px 12px; }
+            .carousel-arrow.prev { left: 8px; }
+            .carousel-arrow.next { right: 8px; }
+            .scroll-hint { font-size: 16px; margin-top: 20px; }
+        }
+        
+        @media (max-width: 480px) {
+            .carousel-main { margin: 0 12px; }
+            .carousel-main img { max-height: 250px; }
+            .carousel-nav { gap: 10px; padding: 12px 12px; margin: 0 -12px; }
+            .carousel-thumb { width: 85px; height: 65px; border-radius: 6px; }
+            .carousel-arrow { font-size: 28px; padding: 6px 10px; }
+            .carousel-arrow.prev { left: 6px; }
+            .carousel-arrow.next { right: 6px; }
+        }
+
+        .property-details { padding: 80px 0; background: var(--bg-800); }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .details-section h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold-500); margin-bottom: 30px; }
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { padding: 12px 0; color: var(--text-100); font-size: 18px; border-bottom: 1px solid rgba(230, 203, 115, 0.1); display: flex; align-items: center; gap: 10px; }
+        .features-list li::before { content: "\2713"; color: var(--gold-500); font-weight: 700; }
+        .features-list li:last-child { border-bottom: none; }
+        .contact-section { background: linear-gradient(135deg, rgba(11, 29, 42, 0.95), rgba(0, 0, 0, 0.98)); padding: 80px 0; text-align: center; }
+        .btn-whatsapp-large { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; padding: 20px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 20px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+        .back-button { position: fixed; top: 20px; left: 20px; background: rgba(0, 0, 0, 0.7); color: var(--text-100); padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; z-index: 1000; }
+        .back-button:hover { background: rgba(0, 0, 0, 0.9); }
+        .property-price-large { font-size: 36px; font-weight: 700; color: var(--gold-500); margin-bottom: 10px; }
+        @media (max-width: 768px){ .details-grid{ grid-template-columns: 1fr; gap: 40px; } }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Voltar</a>
+
+    <!-- Galeria -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <div class="carousel">
+                <div class="carousel-main">
+                    <img id="carousel-main-image" src="src/assets/images/Quintal/Capa%20card.jpeg" alt="Imagem do imóvel" />
+                    <button class="carousel-arrow prev" aria-label="Anterior" data-dir="-1">‹</button>
+                    <button class="carousel-arrow next" aria-label="Próxima" data-dir="1">›</button>
+                </div>
+                <div class="carousel-nav" id="carousel-nav">
+                    <div class="carousel-thumb active"><img src="src/assets/images/Quintal/Capa%20card.jpeg" alt="Fachada / Capa" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.30.jpeg" alt="Ambiente interno" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.30%20(1).jpeg" alt="Ambiente interno 2" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.29.jpeg" alt="Ambiente 3" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.29%20(1).jpeg" alt="Ambiente 4" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.29%20(2).jpeg" alt="Ambiente 5" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.29%20(3).jpeg" alt="Ambiente 6" /></div>
+                    <div class="carousel-thumb"><img src="src/assets/images/Quintal/WhatsApp%20Image%202025-09-16%20at%2014.58.28.jpeg" alt="Quintal" /></div>
+                </div>
+                <div class="scroll-hint">Role para ver mais</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div class="container">
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--gold-500); margin: 0 0 28px; text-align:center; font-size: clamp(28px, 4vw, 40px); letter-spacing:.5px; text-shadow: 0 6px 22px rgba(230,203,115,.18);">Parceiros</h3>
+            <div class="partners-carousel" aria-label="Carrossel de parceiros">
+                <div class="partners-track">
+                    <div class="partner-card"><a href="https://logospng.org" target="_blank" rel="noopener"><img src="https://logospng.org/download/bradesco/logo-bradesco-2048.png" alt="Bradesco" /></a></div>
+                    <div class="partner-card"><a href="https://logospng.org" target="_blank" rel="noopener"><img src="https://logospng.org/download/itau/logo-itau-2048.png" alt="Itaú" /></a></div>
+                    <div class="partner-card"><img src="logo-minha-casa-minha-vida-branca.png" alt="Minha Casa Minha Vida" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="property-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-section">
+                    <h3>Descrição do Imóvel</h3>
+                    <p style="color: var(--text-300); line-height: 1.7; margin-bottom: 16px;">Casa com design moderno, excelente iluminação natural e ambientes amplos. Projeto funcional com quintal generoso para lazer e convivência.</p>
+                    <ul class="features-list">
+                        <li>Terreno 5 x 34 = 170 m²</li>
+                        <li>83 m² de área construída</li>
+                        <li>2 dormitórios, sendo 1 suíte</li>
+                        <li>Sala com pé direito duplo</li>
+                        <li>Sala e cozinha amplas</li>
+                        <li>Quintal espaçoso</li>
+                        <li>Garagem para 2 carros</li>
+                    </ul>
+                </div>
+
+                <div class="details-section">
+                    <h3>Valores do Imóvel</h3>
+                    <div style="background: rgba(230,203,115,.08); border:1px solid rgba(230,203,115,.2); border-radius:12px; padding:24px;">
+                        <div class="property-price-large" style="margin-bottom: 8px;">R$ 450.000</div>
+                        <a href="https://wa.me/5511958693562?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Casa%20com%20Quintal%20Amplo" class="btn-whatsapp-large" target="_blank" rel="noopener noreferrer" data-imovel="Casa com Quintal Amplo" data-local="Mogi das Cruzes - SP">💬 Atendimento pelo WhatsApp</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h3>Interessado neste imóvel?</h3>
+            <p style="color: var(--text-300); margin-bottom: 40px; font-size: 18px;">Entre em contato conosco para agendar uma visita ou obter mais informações</p>
+            <div class="contact-buttons" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                <a href="https://wa.me/5511958693562?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Casa%20com%20Quintal%20Amplo" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-large" data-imovel="Casa com Quintal Amplo" data-local="Mogi das Cruzes - SP">💬 Agendar Visita</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="src/assets/images/logos/logo-horizontal.png" alt="Sabrina Buenos Imóveis" />
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#imoveis">Imóveis</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#footer">Contato</a></li>
+                    <li><a href="index.html#footer">Precisa de Ajuda?</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="index.html#imoveis">Compra de Imóveis</a></li>
+                    <li><a href="index.html#footer">Venda de Imóveis</a></li>
+                    <li><a href="index.html#footer">Avaliação de Imóveis</a></li>
+                    <li><a href="index.html#footer">Consultoria Imobiliária</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <a href="https://www.google.com/maps/dir/-23.5960706,-46.4271973/R.+Paran%C3%A1,+217+-+Sala+709+-+Jardim+Paulista,+Suzano+-+SP,+08675-190/@-23.5460369,-46.3904618,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94ce7b6e52ddfa85:0x7f8aca6b3f2a1706!2m2!1d-46.3080602!2d-23.5460586?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">R. Paraná, 217 - Sala 709<br>Jardim Paulista<br>Suzano - SP, 08675-190</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <a href="https://wa.me/5511958693562" target="_blank" rel="noopener noreferrer">(11) 95869-3562</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <a href="mailto:sabrina.buenos.aires@gmail.com" target="_blank" rel="noopener noreferrer">sabrina.buenos.aires@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💬</span>
+                    <a href="https://wa.me/5511958693562" target="_blank" rel="noopener noreferrer">Fale pelo WhatsApp</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon instagram-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
+                        </svg>
+                    </span>
+                    <a href="https://www.instagram.com/sabrinabuenosimoveis/" target="_blank" rel="noopener noreferrer">@sabrinabuenosimoveis</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© <span id="year"></span> <a href="https://www.conecta4you.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Conecta4You</a> — Todos os direitos reservados.</p>
+                <p class="creci-info">CRECI 41216-J</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp flutuante -->
+    <a class="floating-whatsapp" href="https://wa.me/5511958693562?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Casa%20com%20Quintal%20Amplo" target="_blank" rel="noopener" aria-label="WhatsApp Sabrina Buenos">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#fff" d="M19.11 17.68c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.48-1.83-.15-.27-.02-.42.12-.56.12-.12.27-.32.4-.48.13-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.84-2.05-.22-.53-.44-.45-.62-.46h-.53c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.99 2.65 1.13 2.83c.14.18 1.95 2.98 4.73 4.17.66.29 1.18.46 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/><path fill="#fff" d="M27.55 4.45C24.5 1.4 20.39 0 16.08 0 7.19 0 .01 7.18.01 16.06c0 2.83.74 5.59 2.14 8.02L0 32l8.11-2.12c2.39 1.3 5.09 1.99 7.84 1.99h.01c8.89 0 16.07-7.18 16.08-16.06 0-4.31-1.68-8.37-4.73-11.42zM16 29.12h-.01c-2.54 0-5.02-.68-7.18-1.96l-.52-.31-4.82 1.26 1.29-4.7-.34-.54c-1.32-2.16-2.02-4.66-2.02-7.21 0-7.7 6.27-13.97 13.99-13.97 3.74 0 7.25 1.46 9.9 4.11 2.65 2.65 4.11 6.16 4.11 9.9-.01 7.7-6.28 13.97-13.99 13.97z"/></svg>
+    </a>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        (function(){
+          const whatsButtons = document.querySelectorAll('.btn-whatsapp-large[href^="https://wa.me/"]');
+          whatsButtons.forEach((btn)=>{
+            btn.addEventListener('click', ()=>{
+              const imovel = btn.getAttribute('data-imovel') || 'imóvel';
+              const local = btn.getAttribute('data-local') || '';
+              const msg = `Olá, tenho interesse na ${imovel}${local?` (${local})`:''}. Poderia me dar mais informações?`;
+              const base = btn.getAttribute('href').split('?')[0];
+              btn.setAttribute('href', `${base}?text=${encodeURIComponent(msg)}`);
+            });
+          });
+        })();
+
+        (function(){
+          const main = document.getElementById('carousel-main-image');
+          const nav = document.getElementById('carousel-nav');
+          if (!main || !nav) return;
+          const thumbs = Array.from(nav.querySelectorAll('.carousel-thumb'));
+          let idx = 0;
+          const updateActive = () => {
+            thumbs.forEach((t,i)=> t.classList.toggle('active', i===idx));
+            main.src = thumbs[idx].querySelector('img').src;
+          };
+          nav.addEventListener('click', (e)=>{
+            const item = e.target.closest('.carousel-thumb');
+            if (!item) return;
+            idx = thumbs.indexOf(item);
+            updateActive();
+          });
+          document.querySelectorAll('.carousel-arrow').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+              const dir = Number(btn.dataset.dir);
+              idx = (idx + dir + thumbs.length) % thumbs.length;
+              updateActive();
+            });
+          });
+          let autoplay = setInterval(()=>{ idx = (idx + 1) % thumbs.length; updateActive(); }, 2000);
+          const carousel = document.querySelector('.carousel');
+          if (carousel){
+            carousel.addEventListener('mouseenter', ()=> clearInterval(autoplay));
+            carousel.addEventListener('mouseleave', ()=> { autoplay = setInterval(()=>{ idx = (idx + 1) % thumbs.length; updateActive(); }, 2000); });
+          }
+          
+          // Navegação por teclado
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+              idx = (idx - 1 + thumbs.length) % thumbs.length;
+              updateActive();
+            } else if (e.key === 'ArrowRight') {
+              idx = (idx + 1) % thumbs.length;
+              updateActive();
+            }
+          });
+        })();
+
+        // Carrossel infinito de parceiros - duplicação automática
+        (function() {
+          const partnersTrack = document.querySelector('.partners-track');
+          if (!partnersTrack) return;
+          
+          // Duplicar os cards existentes múltiplas vezes para garantir continuidade
+          const originalCards = partnersTrack.innerHTML;
+          partnersTrack.innerHTML = originalCards + originalCards + originalCards;
+        })();
+    </script>
+</body>
+</html>
+
+<!-- TODO: Subir as imagens deste imóvel nos caminhos abaixo:
+src/assets/images/casa-quintal-amplo/fachada.jpg
+src/assets/images/casa-quintal-amplo/sala1.jpg
+src/assets/images/casa-quintal-amplo/quarto1.jpg
+src/assets/images/casa-quintal-amplo/banheiro1.jpg
+src/assets/images/casa-quintal-amplo/banheiro2.jpg
+src/assets/images/casa-quintal-amplo/quintal.jpg
+Opcional: sala2.jpg, corredor.jpg -->
+
+

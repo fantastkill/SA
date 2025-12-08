@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sabrinabuenosimoveis.com.br/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1
+
+# Permitir acesso às imagens
+Allow: /src/assets/images/
+
+# Permitir acesso aos CSS e JS
+Allow: /src/css/
+Allow: /src/js/
+
+# Bloquear arquivos desnecessários
+Disallow: /src/assets/images/logos/logo-preloader.png
+Disallow: /*.log$
+Disallow: /temp/
+Disallow: /backup/
+
+# Permitir Googlebot específico
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Permitir Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

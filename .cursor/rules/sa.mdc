@@ -1,0 +1,6 @@
+Tarefa: criar seção nova
+- [ ] Escrever HTML sem classes mágicas
+- [ ] Estilizar só com Tailwind utilities
+- [ ] Interação simples com Alpine
+- [ ] Testar no `npm run dev`
+
